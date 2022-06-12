@@ -49,9 +49,7 @@ body{
 }
 
 #alert {
-	margin-left:-80vh;
-	
-	display:none;
+  display:none;
   padding: 15px;
   background-color: #3FE29A; 
   color: white;
