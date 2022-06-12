@@ -1,0 +1,77 @@
+.grid {
+  display: table;
+  margin-top:10%;
+  border-spacing: 10px
+}
+.row {
+  display: table-row
+}
+.cell {
+	
+  border-radius:200px;
+  transition-duration: 1.5s;
+  width: 100px;
+  height: 100px;
+  background: grey;
+  display: table-cell;
+}
+.cell:active {
+	
+	transition-duration: 1.5s;
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+.cell:hover{
+	filter: drop-shadow(0 0 0.75rem #f6ff00);
+}
+#contenedor{
+	margin-top:20px;
+ margin-left:40%;
+ color:white;
+ font-size: 30px;
+
+}
+p{
+	 color:white;
+ font-size: 20px;
+}
+#countdown{
+	position:relative;
+}
+h2{
+	
+	text-align:center;
+	color:white;
+}
+body{
+	 background-image:url("../../images/fondo.jpg");
+	 
+}
+
+#alert {
+	margin-left:-80vh;
+	
+	display:none;
+  padding: 15px;
+  background-color: #3FE29A; 
+  color: white;
+}
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.closebtn:hover {
+  color: black;
+}
+#seg{
+	    
+    margin-top: -34px;
+    margin-left: 48px;
+	position:absolute;
+}

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+<head>
+
+	<meta charset="utf-8">
+	<title>9 Luces</title>
+	<meta name="gfigueroa">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script type="text/javascript">
+function funo(){
+ if (document.getElementById("uno").style.background != "yellow"){
+  document.getElementById("uno").style.background = "yellow";
+  }else{
+  document.getElementById("uno").style.background = "grey";
+}
+}
+function fdos(){
+ if (document.getElementById("dos").style.background != "yellow"){
+  document.getElementById("dos").style.background = "yellow";
+  }else{
+  document.getElementById("dos").style.background = "grey";
+}
+}
+function ftres(){
+ if (document.getElementById("tres").style.background != "yellow"){
+  document.getElementById("tres").style.background = "yellow";
+  }else{
+  document.getElementById("tres").style.background = "grey";
+}
+}	
+function fcuatro(){
+ if (document.getElementById("cuatro").style.background != "yellow"){
+  document.getElementById("cuatro").style.background = "yellow";
+  }else{
+  document.getElementById("cuatro").style.background = "grey";
+}
+}
+function fcinco(){
+ if (document.getElementById("cinco").style.background != "yellow"){
+  document.getElementById("cinco").style.background = "yellow";
+  }else{
+  document.getElementById("cinco").style.background = "grey";
+}
+}
+function fseis(){
+ if (document.getElementById("seis").style.background != "yellow"){
+  document.getElementById("seis").style.background = "yellow";
+  }else{
+  document.getElementById("seis").style.background = "grey";
+}
+}
+function fsiete(){
+ if (document.getElementById("siete").style.background != "yellow"){
+  document.getElementById("siete").style.background = "yellow";
+  }else{
+  document.getElementById("siete").style.background = "grey";
+}
+}
+function focho(){
+ if (document.getElementById("ocho").style.background != "yellow"){
+  document.getElementById("ocho").style.background = "yellow";
+  }else{
+  document.getElementById("ocho").style.background = "grey";
+}
+}
+function fnueve(){
+ if (document.getElementById("nueve").style.background != "yellow"){
+  document.getElementById("nueve").style.background = "yellow";
+  }else{
+  document.getElementById("nueve").style.background = "grey";
+}
+}
+function fgano(){	
+if (document.getElementById("ocho").style.background == "yellow" && document.getElementById("nueve").style.background == "yellow" && document.getElementById("siete").style.background == "yellow" && document.getElementById("seis").style.background == "yellow" && document.getElementById("cinco").style.background == "yellow" && document.getElementById("cuatro").style.background == "yellow" && document.getElementById("tres").style.background == "yellow" && document.getElementById("dos").style.background == "yellow" && document.getElementById("uno").style.background == "yellow"){
+document.getElementById("alert").style.display="block";
+document.getElementById('tiempofaltante').innerHTML = totalTime;
+totalTime = 0;
+
+}
+}
+function uno(){
+	funo();
+	fdos();
+	fcuatro();
+	fgano();
+}
+function dos() {
+	fdos();
+	funo();
+	ftres();
+	fcinco();
+	fgano();
+  }
+function tres() {
+	ftres();
+	fdos();
+	fseis();
+	fgano();
+}
+function cuatro() {
+	funo();
+	fcuatro();
+	fcinco();
+	fsiete();
+	fgano();
+}
+function cinco() {
+	fdos();
+	fcuatro();
+	fcinco();
+	fseis();
+	focho();
+	fgano();
+}
+function seis() {
+	ftres();
+	fcinco();
+	fseis();
+	fnueve();
+	fgano();
+}
+function siete() {
+	fcuatro();
+	fsiete();
+	focho();
+	fgano();
+}
+function ocho() {
+	fcinco();
+	fsiete();
+	focho();
+	fnueve();
+	fgano();
+}
+function nueve() {
+	fseis();
+	focho();
+	fnueve();
+	fgano();
+}
+
+window.onload = updateClock;
+var totalTime = 120;
+
+function updateClock() {
+  document.getElementById('countdown').innerHTML = totalTime;
+  if(totalTime==1){
+    alert('¡Perdiste! Se acabó el tiempo');
+	location.reload();
+  }else{
+    totalTime-=1;
+    setTimeout("updateClock()",1000);
+  }
+  if(totalTime<0){
+	 totalTime=0;
+  }
+}
+</script>
+</head>
+
+<body>
+<H2>¡Encienda todas las luces!</h2>
+<div id="contenedor">
+	
+	<div class="grid">
+		<div class="row">
+		<div id="uno" onclick="uno()" class="cell"></div>
+		<div id="dos" onclick="dos()" class="cell"></div>
+		<div id="tres" onclick="tres()" class="cell"></div>
+	</div>
+	<div class="row">
+		<div id="cuatro" onclick="cuatro()"class="cell"></div>
+		<div id="cinco" onclick="cinco()" class="cell"></div>
+		<div id="seis" onclick="seis()" class="cell"></div>
+	</div>
+	<div class="row">
+		<div id="siete" onclick="siete()" class="cell"></div>
+		<div id="ocho" onclick="ocho()" class="cell"></div>
+		<div id="nueve" onclick="nueve()" class="cell"></div>
+	</div>
+</div>
+<div>
+<div id="datos">
+<input type="button" value="Restablecer las luces" onClick="location.reload();" style="width: 200px; margin-top:50px; margin-left:60px; height: 30px; background: #CE9F19;  color: #ffffff; cursor: pointer; border: 0px;"/>
+<p>Segundos restantes:</p>
+<span id="countdown"></span>
+</div>
+
+<div id="alert" onclick="this.style.display='none'; location.reload();">
+  <span id="contador" class="closebtn" onclick="document.getElementById('alert').style.display='block'; location.reload();">&times;</span> 
+  <strong>¡Felicidades!</strong> Ganaste.<br> Quedaban:</br>
+  <div id="tiempofaltante"></div><div id="seg">s.</div>
+  <div>
+</div>
+</body>
+</html>
