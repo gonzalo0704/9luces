@@ -75,3 +75,16 @@ body{
     margin-left: 48px;
 	position:absolute;
 }
+@media only screen and (max-width: 600px) {
+body {
+    background-image: url(../../images/fondo.jpg);
+    background-size: auto;
+}
+#contenedor{
+	margin-top:20px;
+ margin-left:10%;
+ color:white;
+ font-size: 30px;
+
+}
+}
