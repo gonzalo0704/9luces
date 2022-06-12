@@ -53,6 +53,7 @@ body{
   padding: 15px;
   background-color: #3FE29A; 
   color: white;
+  width: fit-content;
 }
 .closebtn {
   margin-left: 15px;
